@@ -41,12 +41,11 @@ else:
 # create new json
 
     jsondata = {}
-    jsondata['SiteMeterPush'] = {}
-    jsondata['SiteMeterPush']['siteId'] = siteId
-    jsondata['SiteMeterPush']['siteMeters'] = {}
-    jsondata['SiteMeterPush']['siteMeters']['production_kw'] = production
-    jsondata['SiteMeterPush']['siteMeters']['net_import_kw'] = grid
-    jsondata['SiteMeterPush']['siteMeters']['consumption_kw'] = consumption 
+    jsondata['siteId'] = siteId
+    jsondata['siteMeters'] = {}
+    jsondata['siteMeters']['production_kw'] = production
+    jsondata['siteMeters']['net_import_kw'] = grid
+    jsondata['siteMeters']['consumption_kw'] = consumption 
     json_dump = json.dumps(jsondata)
     
     print(json_dump)
