@@ -11,7 +11,7 @@ siteId = `'<your siteId as provided by ChargeH>'`
 endPoint = `'https://<ChargeHQ API URL as provided by Jay>'`  
 
 POST's the following json to ChargeHQ;  
-{"SiteMeterPush": {"siteId": "not_telling", "siteMeters": {"production_kw": 0.00, "net_import_kw": 0.00, "consumption_kw": 0.00}}}  
+{"siteId": "not_telling", "siteMeters": {"production_kw": 0.00, "net_import_kw": 0.00, "consumption_kw": 0.00}}
 
 Negative net_import = exporting  
 Full API not documented here as Jay may not want that made public  
