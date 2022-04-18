@@ -7,7 +7,7 @@ Uses the Envoy production.json data.
 
 Requires a config.py file in the same directory with the following format;  
 source = `'http://<ip of your local envoy>/production.json'`  
-siteId = `'your siteId as provided by ChargeH>'`  
+siteId = `'<your siteId as provided by ChargeH>'`  
 endPoint = `'https://<ChargeHQ API URL as provided by Jay>'`  
 
 POST's the following json to ChargeHQ;  
