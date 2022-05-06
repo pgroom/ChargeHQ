@@ -5,6 +5,9 @@ Works with version 5 Envoy firmware.
 Version 7 will break the http auth and require further work.   
 Uses the Envoy production.json data.  
 
+crontab;
+*/1 5-21 * * * /home/pi/scripts/enphase/ChargeHQ/chargehq.py
+
 Requires a config.py file in the same directory with the following format;  
 source = `'http://<ip of your local envoy>/production.json'`  
 siteId = `'<your siteId as provided by ChargeH>'`  
