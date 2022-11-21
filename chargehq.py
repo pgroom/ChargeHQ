@@ -28,27 +28,27 @@ else:
     production = round(data['production'][0]['wNow'] / 1000,2)
     grid = round(production - consumption,2)
 
-#   print ('Production: ' , production)
-#   print ('Consumption: ' , consumption)
+    print ('Production: ' , production)
+    print ('Consumption: ' , consumption)
 
     if grid <0:
         grid = abs(grid) # Invert grid value from Envoy value to keep ChargeHQ happy
     else:
         grid = -abs(grid) # Invert grid value from Envoy value to keep ChargeHQ happy
 
-#   print ('Grid: ' , grid)
+    print ('Grid: ' , grid)
 
 # create new json
 
     jsondata = {}
-    jsondata['siteId'] = siteId
+    jsondata['apiKey'] = apiKey
     jsondata['siteMeters'] = {}
     jsondata['siteMeters']['production_kw'] = production
     jsondata['siteMeters']['net_import_kw'] = grid
     jsondata['siteMeters']['consumption_kw'] = consumption 
     json_dump = json.dumps(jsondata)
     
-#   print(json_dump)
+    print(json_dump)
 
 # POST json to ChargeHQ
 
