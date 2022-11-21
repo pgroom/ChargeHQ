@@ -1,16 +1,21 @@
-An attempt at a Python script to take solar data from my local Enphase Envoy and push it to the ChargeHQ API to allow me to charge my EV from excess solar.  
+Python script to take solar data from a local Enphase Envoy and push it to the ChargeHQ API.  
+Created because ChargeHQ is unable to support Enphase nativley.  
 
-Relies on Envoy being the older version 5 firmware. Version 7 will break the http auth and require further work. Uses the Envoy production.json data.  
+ChargeHQ specific information available from https://chargehq.net/kb/push-api
+
+Known to work with version 5 Envoy firmware. 
+
+Uses the Envoy production.json data.  
+
+crontab to run 5AM to 9PM daily;
+*/1 5-21 * * * <path>/chargehq.py
 
 Requires a config.py file in the same directory with the following format;  
-source = 'http://ip of your local envoy/production.json'  
-siteId = 'your siteId as provided by ChargeH>'  
-endPoint = 'https://ChargeHQ API URL as provided by Jay'  
+source = `'http://<ip of your local envoy>/production.json'`    
+endPoint = `'https://api.chargehq.net/api/public/push-solar-data>'`  
+apiKey = `'<your apiKey from https://app.chargehq.net/config/energy-monitor>'`
 
 POST's the following json to ChargeHQ;  
-{"SiteMeterPush": {"siteId": "not_telling", "siteMeters": {"production_kw": 0.0, "net_import_kw": 0.00, "consumption_kw": 0.00}}}  
+{"apiKey": "not_telling", "siteMeters": {"production_kw": 0.00, "net_import_kw": 0.00, "consumption_kw": 0.00}}
 
-Full API not documented here as Jay may not want that made public  
-
-
-
+Negative net_import = exporting
