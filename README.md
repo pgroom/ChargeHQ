@@ -7,7 +7,7 @@ Known to work with version 5 Envoy firmware.
 
 Uses the Envoy production.json data.  
 
-crontab to run every 60 seconds 5AM to 9PM daily; ` */1 5-21 * * * <path>/chargehq.py` 
+crontab to run every minute, 5AM to 10PM daily; ` */1 5-21 * * * <path>/chargehq.py` 
 
 Requires a config.py file in the same directory with the following format;  
 source = `'http://<ip of your local envoy>/production.json'`    
