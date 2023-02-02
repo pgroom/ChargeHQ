@@ -22,21 +22,14 @@ else:
 
 # Massage Envoy json into ChargeHQ compatible json
 
-#   print(json.dumps(data, indent = 4, sort_keys=True))
-
     consumption = round(data['consumption'][0]['wNow'] / 1000,2)
     production = round(data['production'][0]['wNow'] / 1000,2)
     grid = round(production - consumption,2)
-
-    print ('Production: ' , production)
-    print ('Consumption: ' , consumption)
 
     if grid <0:
         grid = abs(grid) # Invert grid value from Envoy value to keep ChargeHQ happy
     else:
         grid = -abs(grid) # Invert grid value from Envoy value to keep ChargeHQ happy
-
-    print ('Grid: ' , grid)
 
 # create new json
 
@@ -48,8 +41,6 @@ else:
     jsondata['siteMeters']['consumption_kw'] = consumption 
     json_dump = json.dumps(jsondata)
     
-    print(json_dump)
-
 # POST json to ChargeHQ
 
     header = {'Content-type': 'application/json', 'Accept': 'text/plain'}
