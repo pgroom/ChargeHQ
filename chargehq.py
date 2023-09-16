@@ -5,6 +5,7 @@ import requests
 import configparser
 import jwt
 import time
+import os
 from socket import timeout
 from urllib.error import HTTPError, URLError
 
@@ -12,7 +13,7 @@ requests.packages.urllib3.disable_warnings()
 error = 'None'
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read(os.path.join(os.path.dirname(__file__),'config.ini'))
 
 user = config['ENPHASE']['user']
 password = config['ENPHASE']['password']
