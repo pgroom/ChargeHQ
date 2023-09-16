@@ -7,7 +7,10 @@ Created because ChargeHQ is unable to support Enphase nativley due to Enphase 3r
 ChargeHQ specific information available from https://chargehq.net/kb/push-api
 
 Known to work with version 7 Envoy firmware that forces use of a token and session cookie\
-If you have version 5 Envoy firmware then try chargehq_v5.py
+If you have version 5 Envoy firmware then try chargehq_v5.py\
+Script grabs initial token file from Enphase using the credentials you supply in the config.ini file\
+Script will renew the token when it has less than 30 days before expiry\
+At the time of writing Enphase set token expiry to be twelve months
 
 Uses the Envoy production.json data.  
 
