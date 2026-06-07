@@ -1,6 +1,11 @@
 
 # ChargeHQ
 
+NO LONGER MAINTAINED
+Apologies to anyone who comes here from the official ChargeHQ webiste. 
+I know they still (as at June 2026) link to this repository however they wouldn't work with me
+so I cancelled my subscription in June 2024 and no longer maintain this code.
+
 Python script to take solar data from a local Enphase Envoy and push it to the ChargeHQ API.  
 Created because ChargeHQ is unable to support Enphase nativley due to Enphase 3rd party access policy. 
 
